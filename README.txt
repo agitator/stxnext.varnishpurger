@@ -1,11 +1,10 @@
-====================
 stxnext.varnishpurger
-====================
+=====================
 
 Overview
 ========
 
-Viewlet containing linkt to perform action of purging varnish cache
+A viewlet containing the link to perform action of purging varnish cache
 for actual object's views.
 
 
@@ -23,7 +22,7 @@ If you are using zc.buildout to manage your project, you can do this:
         stxnext.varnishpurger
         
 * If you're using plone.recipe.zope2instance recipe to manage your 
-  instance add this lines to install a ZCML slug:
+  instance add this lines to install a ZCML slug::
 
     [instance]
     recipe = plone.recipe.zope2instance
@@ -40,35 +39,47 @@ If you are using zc.buildout to manage your project, you can do this:
 You can skip the ZCML slug if you are going to explicitly include the package
 from another package's configure.zcml file.
 
-Finally go to portal_setup and import steps for stxnext.varnishpurger profile.
+Finally go to portal_quickinstaller and install stxnext.varnishpurger product.
 
 Usage
 =====
 
 After installation one new viewlet above object's content will be displayed.
 The viewlet contains a link to purge content of actual url from varnish cache.
-In site properties there is additional configuration for varnish url and
-domains to be purged.
+In site properties there is additional configuration where you can define the
+address of varnish instance url (by default: localhost:6081).
 
 The varnish configuration file should contain customized vcl_recv subroutine
-to purge given object by it's UID.
+to purge given object by it's UID::
  
-sub vcl_recv {
+	sub vcl_recv {
+	
+		...
+	
+	   if (req.request == "PURGE") {
+	        if (!client.ip ~ purge) {
+	             error 405 "Not allowed.";
+		    }
+	        purge("obj.http.X-Context-Uid ~ " req.url);
+	   	    error 200 "Purged";
+	        return(lookup);
+	   }
+	    
+	    ...
+	
+	}
 
-	...
+Tested With
+===========
 
-   if (req.request == "PURGE") {
-        if (!client.ip ~ purge) {
-             error 405 "Not allowed.";
-	    }
-        purge("obj.http.X-Context-Uid ~ " req.url);
-   	    error 200 "Purged";
-        return(lookup);
-   }
-    
-    ...
+Plone 3, Plone 4 and Varnish 2.1.x
 
-}
+
+Source
+======
+
+.. http://svn.plone.org/svn/collective/stxnext.varnishpurger/
+
 
 References
 ==========

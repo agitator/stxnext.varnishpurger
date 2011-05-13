@@ -10,7 +10,7 @@ setup (
     author = 'STX Next Sp. z o.o, Radek Jankiewicz, Marcin Ossowski, Wojciech Lichota',
     author_email = 'info@stxnext.pl',
     description = 'Plone viewlet for purging varnish cache for given url.',
-    long_description=open("README.txt").read() + "\n" + open(os.path.join("docs", "HISTORY.txt")).read(),
+    long_description = open("README.txt").read() + "\n" + open(os.path.join("docs", "HISTORY.txt")).read(),
     keywords = 'python plone varnish purge',
     platforms = ['any'],
     license = 'Zope Public License, Version 2.1 (ZPL)',
@@ -23,7 +23,6 @@ setup (
                         ],
     
     classifiers = [
-        'Development Status :: 3 - Alpha',
         'Framework :: Zope2',
         'Framework :: Plone',
         'Intended Audience :: Developers',
