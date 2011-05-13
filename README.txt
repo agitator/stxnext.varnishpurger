@@ -84,7 +84,8 @@ http://svn.plone.org/svn/collective/stxnext.varnishpurger/trunk
 References
 ==========
 
-varnish: http://varnish.projects.linpro.no/
+varnish: http://www.varnish-cache.org
+
 Plone: http://plone.org
 
 

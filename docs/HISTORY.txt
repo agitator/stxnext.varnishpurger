@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.1.2 (2011-05-13)
+------------------
+
+- Moved to collective svn, updated docs [radekj]
+
 0.1.1 (2010-05-24)
 ------------------
 
