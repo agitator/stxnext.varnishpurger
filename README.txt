@@ -78,14 +78,14 @@ Plone 3, Plone 4 and Varnish 2.1.x
 Source
 ======
 
-.. http://svn.plone.org/svn/collective/stxnext.varnishpurger/
+http://svn.plone.org/svn/collective/stxnext.varnishpurger/trunk
 
 
 References
 ==========
 
-.. varnish: http://varnish.projects.linpro.no/
-.. Plone: http://plone.org
+varnish: http://varnish.projects.linpro.no/
+Plone: http://plone.org
 
 
 
