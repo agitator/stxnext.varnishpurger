@@ -29,5 +29,13 @@ setup (
         'License :: OSI Approved :: Zope Public License',
         'Natural Language :: English',
         'Programming Language :: Python',
-        ]
+        ],
+
+    entry_points="""
+      # -*- Entry points: -*-
+
+      [z3c.autoinclude.plugin]
+      target = plone
+      """,
+      
     )

@@ -12,7 +12,7 @@
 	<i18n:registerTranslations directory="locales"/>
 	
     <genericsetup:registerProfile
-          name="stxnext.varnishpurger"
+          name="default"
           title="stxnext.varnishpurger"
           directory="profiles/default"
           description="Extension profile for varnishpurger."

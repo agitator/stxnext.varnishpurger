@@ -34,7 +34,7 @@ class PurgeActionView(BrowserView):
         #TODO: Handle exceptions of connection problem
         for uid in purging_uids:
             connection = httplib.HTTPConnection(host, port)
-            connection.putrequest('PURGE', uid + ' HTTP/1.1')
+            connection.putrequest('PURGE', uid)
             connection.putheader('Host', host + ':' + port)
             connection.endheaders()
             connection.send('')
