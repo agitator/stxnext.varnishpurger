@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.3.0 (2011-12-08)
+------------------
+
+- Link for executing purging action moved from a viewlet to the 'Actions' dropdown [radekj]
+
 0.2.0 (2011-11-03)
 ------------------
 

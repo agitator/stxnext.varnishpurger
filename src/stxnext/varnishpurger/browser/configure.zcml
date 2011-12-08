@@ -5,7 +5,6 @@
     i18n_domain="stxnext.varnishpurger">
     
     <include package=".preferences" />
-    <include file="viewlets.zcml" />
 	
 	<browser:resourceDirectory name="stxnext.varnishpurger" directory="./resources" />
     
@@ -13,8 +12,8 @@
 	  for="*"
       name="varnish_purge"
       permission="zope2.View"
-      class=".viewlets.purge_action.PurgeActionView"
+      class=".purge_action.PurgeActionView"
       attribute="PurgeAction"
-    />
+      />
 
 </configure>
